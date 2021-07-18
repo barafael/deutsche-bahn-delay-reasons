@@ -1,0 +1,12 @@
+[package]
+name = "deutsche-bahn-delay-reasons"
+authors = ["Rafael Bachmann <rafael.bachmann.93@gmail.com>"]
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+enum_index = "0.2.0"
+enum_index_derive = "0.2.0"
+rand = "0.8.4"
+thiserror = "1.0.26"
+variant_count = "1.1.0"
