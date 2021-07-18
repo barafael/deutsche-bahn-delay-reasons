@@ -4,7 +4,7 @@ authors = ["Rafael Bachmann <rafael.bachmann.93@gmail.com>"]
 description = "Get some reasons why your Deutsche Bahn train is late. Supports random reason generation."
 license-file = "LICENSE"
 repository = "https://github.com/barafael/deutsche-bahn-delay-reasons"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2018"
 
 [dependencies]
