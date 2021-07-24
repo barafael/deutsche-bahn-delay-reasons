@@ -10,8 +10,8 @@ edition = "2018"
 [dependencies]
 enum_index = "0.2.0"
 enum_index_derive = "0.2.0"
+
+getrandom = { version = "0.2", features = ["js"] }
 rand = "0.8.4"
 thiserror = "1.0.26"
 variant_count = "1.1.0"
-
-getrandom = { version = "0.2", features = ["js"] }
