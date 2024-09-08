@@ -13,7 +13,13 @@ mod random_grund;
 
 /// Get a random delay reason.
 pub fn get_grund() -> Grund {
-    rand::random()
+    Grund::default()
+}
+
+impl Default for Grund {
+    fn default() -> Self {
+        rand::random()
+    }
 }
 
 /// Some of the possible reasons a Deutsche Bahn train could be delayed.
