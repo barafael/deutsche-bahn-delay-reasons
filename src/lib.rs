@@ -1,6 +1,6 @@
 //! Deutsche Bahn is awesome, but often trains are late.
 //! There can be many reasons, some of which this library enumerates.
-//! Use the function [`get_grund`] to get a random delay reason.
+//! Use the function [`Grund::default`] or [`get_grund`] to get a delay reason.
 //!
 //! This library exists because I was waiting for a train.
 
