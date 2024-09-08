@@ -6,7 +6,7 @@
 
 use thiserror::Error;
 
-use enum_index_derive::{IndexEnum};
+use enum_index_derive::IndexEnum;
 use variant_count::VariantCount;
 
 mod random_grund;
