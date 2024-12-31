@@ -30,6 +30,10 @@ pub enum Grund {
     #[error("Fahrt fällt aus")]
     FahrtFaelltAus,
 
+    /// Stop cancelled.
+    #[error("Halt entfällt")]
+    HaltEntfaellt,
+
     /// Trip only reaches a certain stop today.
     #[error("Fährt heute nur bis {0}")]
     FaehrtHeuteNurBis(String),
@@ -68,7 +72,7 @@ pub enum Grund {
 
     /// Difficulties with a switch.
     #[error("Weichenstörung")]
-    WeichenStoerung,
+    Weichenstoerung,
 
     /// Changes in the journey course.
     #[error("Änderung im Fahrtverlauf")]
@@ -77,6 +81,14 @@ pub enum Grund {
     /// Storm or bad weather.
     #[error("Unwetter")]
     Unwetter,
+
+    /// Short-term staff shortage.
+    #[error("Kurzfristiger Personalausfall")]
+    KurzfristigerPersonalausfall,
+
+    /// Different trip instead of the planned one. Tickets stay valid.
+    #[error("Statt {0} fährt heute {1}. Tickets behalten weiterhin ihre Gültigkeit.")]
+    StattZugFaehrtHeuteZug(String, String)
 }
 
 #[cfg(test)]
