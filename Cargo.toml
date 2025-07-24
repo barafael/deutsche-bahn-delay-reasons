@@ -5,12 +5,10 @@ description = "Get some reasons why your Deutsche Bahn train is late. Supports r
 license-file = "LICENSE"
 repository = "https://github.com/barafael/deutsche-bahn-delay-reasons"
 version = "0.4.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
-enum_index = "0.2"
-enum_index_derive = "0.2"
-
-rand = "0.8"
+rand = "0.9"
+strum = { version = "0.27.2", features = ["derive", "strum_macros"] }
+strum_macros = "0.27.2"
 thiserror = "2"
-variant_count = "1"
