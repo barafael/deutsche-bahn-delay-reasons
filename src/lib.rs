@@ -4,10 +4,8 @@
 //!
 //! This library exists because I was waiting for a train.
 
+use strum_macros::{EnumCount as EnumCountMacro, FromRepr as FromReprMacro};
 use thiserror::Error;
-
-use enum_index_derive::IndexEnum;
-use variant_count::VariantCount;
 
 mod random_grund;
 
@@ -24,7 +22,7 @@ impl Default for Grund {
 
 /// Some of the possible reasons a Deutsche Bahn train could be delayed.
 #[non_exhaustive]
-#[derive(Debug, Error, VariantCount, IndexEnum)]
+#[derive(Debug, FromReprMacro, EnumCountMacro, Error)]
 pub enum Grund {
     /// Trip cancelled.
     #[error("Fahrt fällt aus")]
@@ -88,7 +86,7 @@ pub enum Grund {
 
     /// Different trip instead of the planned one. Tickets stay valid.
     #[error("Statt {0} fährt heute {1}. Tickets behalten weiterhin ihre Gültigkeit.")]
-    StattZugFaehrtHeuteZug(String, String)
+    StattZugFaehrtHeuteZug(String, String),
 }
 
 #[cfg(test)]
@@ -99,10 +97,5 @@ mod tests {
     fn bauarbeiten() {
         let formatted = format!("Grund: {}", Grund::Bauarbeiten);
         assert_eq!("Grund: Bauarbeiten", formatted);
-    }
-
-    #[test]
-    fn get_random_grund() {
-        println!("Grund: {}", get_grund());
     }
 }
