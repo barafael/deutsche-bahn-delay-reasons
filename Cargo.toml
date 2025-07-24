@@ -7,6 +7,9 @@ repository = "https://github.com/barafael/deutsche-bahn-delay-reasons"
 version = "0.4.0"
 edition = "2024"
 
+[features]
+inofficial = []
+
 [dependencies]
 rand = "0.9"
 strum = { version = "0.27.2", features = ["derive", "strum_macros"] }

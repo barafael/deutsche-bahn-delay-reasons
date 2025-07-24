@@ -44,6 +44,42 @@ pub enum Grund {
     #[error("Gleiswechsel")]
     Gleiswechsel,
 
+    /// Delay from earlier journey.
+    #[error("Verspätung aus vorheriger Fahrt")]
+    VerspaetungAusVorherigerFahrt,
+
+    /// Person on the tracks.
+    #[error("Person auf dem Gleis")]
+    PersonAufDemGleis,
+
+    /// Signal malfunction.
+    #[error("Signalstörung")]
+    Signalstörung,
+
+    /// Disturbance by vandalism.
+    #[error("Beeinträchtigung durch Vandalismus")]
+    BeeintraechtigungDurchVandalismus,
+
+    /// Door malfunction.
+    #[error("Tuerstoerung")]
+    TuerStoerung,
+
+    /// Waiting for passengers using same connection.
+    #[error("Warten auf Anschlussreisende")]
+    WartenAufAnschlussreisende,
+
+    /// Medical emergency on the track.
+    #[error("NotarztEinsatzAnDerStrecke")]
+    NotarztEinsatzAnDerStrecke,
+
+    /// Medical emergency on the train.
+    #[error("Ärztliche Versorgung eines Fahrgastes")]
+    AerztlicheVersorgungEinesFahrgastes,
+
+    /// Train advancing with diminished velocity.
+    #[error("Zug verkehrt mit verminderter Geschwindigkeit")]
+    ZugVerkehrtMitVerminderterGeschwindigkeit,
+
     /// Trip cancelled, there is replacement trip.
     #[error("Fahrt fällt aus, es verkehrt Ersatzfahrt {0}")]
     FahrtFaelltAusMitErsatzfahrt(String),
@@ -68,7 +104,7 @@ pub enum Grund {
     #[error("Witterungsbedingte Störung")]
     WitterungsbedingteStoerung,
 
-    /// Difficulties with a switch.
+    /// Switch malfunction.
     #[error("Weichenstörung")]
     Weichenstoerung,
 
@@ -87,6 +123,11 @@ pub enum Grund {
     /// Different trip instead of the planned one. Tickets stay valid.
     #[error("Statt {0} fährt heute {1}. Tickets behalten weiterhin ihre Gültigkeit.")]
     StattZugFaehrtHeuteZug(String, String),
+
+    #[cfg(feature = "inofficial")]
+    /// Reason being that the train must urgently visit a workshop.
+    #[error("Grund ist, dass der Zug dringend in die Werkstatt muss")]
+    GrundIstDassDerZugDringendInDieWerkstattMuss,
 }
 
 #[cfg(test)]
