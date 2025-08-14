@@ -124,6 +124,10 @@ pub enum Grund {
     #[error("Statt {0} fährt heute {1}. Tickets behalten weiterhin ihre Gültigkeit.")]
     StattZugFaehrtHeuteZug(String, String),
 
+    ///
+    #[error("Gefährliches Ereignis - Vorbeifahrt am Haltbegriff")]
+    DangerousEventStopSignalPassedWithoutAuthorization,
+
     #[cfg(feature = "inofficial")]
     /// Reason being that the train must urgently visit a workshop.
     #[error("Grund ist, dass der Zug dringend in die Werkstatt muss")]
