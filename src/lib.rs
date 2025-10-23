@@ -132,6 +132,10 @@ pub enum Grund {
     /// Reason being that the train must urgently visit a workshop.
     #[error("Grund ist, dass der Zug dringend in die Werkstatt muss")]
     GrundIstDassDerZugDringendInDieWerkstattMuss,
+
+    /// Rocks on the track, need to check for damage
+    #[error("Wegen Steinen auf der Strecke muss der Zug auf Schäden kontrolliert werden.")]
+    SteineAufStrecke,
 }
 
 #[cfg(test)]
