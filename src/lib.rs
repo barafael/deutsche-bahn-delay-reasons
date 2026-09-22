@@ -61,7 +61,7 @@ pub enum Grund {
     BeeintraechtigungDurchVandalismus,
 
     /// Door malfunction.
-    #[error("Tuerstoerung")]
+    #[error("Türstörung")]
     TuerStoerung,
 
     /// Waiting for passengers using same connection.
@@ -69,7 +69,7 @@ pub enum Grund {
     WartenAufAnschlussreisende,
 
     /// Medical emergency on the track.
-    #[error("NotarztEinsatzAnDerStrecke")]
+    #[error("Notarzteinsatz an der Strecke")]
     NotarztEinsatzAnDerStrecke,
 
     /// Medical emergency on the train.
@@ -124,7 +124,7 @@ pub enum Grund {
     #[error("Statt {0} fährt heute {1}. Tickets behalten weiterhin ihre Gültigkeit.")]
     StattZugFaehrtHeuteZug(String, String),
 
-    ///
+    /// Train passed a stop signal without authorization (dangerous event).
     #[error("Gefährliches Ereignis - Vorbeifahrt am Haltbegriff")]
     DangerousEventStopSignalPassedWithoutAuthorization,
 
@@ -136,6 +136,78 @@ pub enum Grund {
     /// Rocks on the track, need to check for damage
     #[error("Wegen Steinen auf der Strecke muss der Zug auf Schäden kontrolliert werden.")]
     SteineAufStrecke,
+
+    /// Overhead line malfunction.
+    #[error("Oberleitungsstörung")]
+    Oberleitungsstoerung,
+
+    /// Signal box (interlocking) malfunction.
+    #[error("Stellwerksstörung")]
+    Stellwerksstoerung,
+
+    /// Route closure.
+    #[error("Streckensperrung")]
+    Streckensperrung,
+
+    /// Diversion.
+    #[error("Umleitung")]
+    Umleitung,
+
+    /// Level crossing malfunction.
+    #[error("Bahnübergangsstörung")]
+    Bahnuebergangsstoerung,
+
+    /// Animal on the tracks.
+    #[error("Tier im Gleis")]
+    TierImGleis,
+
+    /// Vehicle on the tracks.
+    #[error("Fahrzeug im Gleis")]
+    FahrzeugImGleis,
+
+    /// Police operation.
+    #[error("Polizeieinsatz")]
+    Polizeieinsatz,
+
+    /// Fire brigade deployment.
+    #[error("Feuerwehreinsatz")]
+    Feuerwehreinsatz,
+
+    /// Strike.
+    #[error("Streik")]
+    Streik,
+
+    /// Border control.
+    #[error("Grenzkontrolle")]
+    Grenzkontrolle,
+
+    /// Unusually high passenger volume.
+    #[error("Hohes Fahrgastaufkommen")]
+    HohesFahrgastaufkommen,
+
+    /// Delayed boarding and alighting.
+    #[error("Verzögerungen beim Ein- und Ausstieg")]
+    VerzoegerungenBeimEinUndAusstieg,
+
+    /// Waiting for the opposing train.
+    #[error("Warten auf einen Gegenzug")]
+    WartenAufEinenGegenzug,
+
+    /// Waiting for a clear route.
+    #[error("Warten auf freie Fahrstraße")]
+    WartenAufFreieFahrstrasse,
+
+    /// Delay abroad, e.g. of a connecting service.
+    #[error("Verspätung im Ausland")]
+    VerspaetungImAusland,
+
+    /// Fluid leak from the train.
+    #[error("Austritt von Flüssigkeiten")]
+    AustrittVonFluessigkeiten,
+
+    /// Air conditioning failure.
+    #[error("Klimaanlagenausfall")]
+    Klimaanlagenausfall,
 }
 
 #[cfg(test)]
